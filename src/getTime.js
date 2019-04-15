@@ -18,7 +18,7 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const timeValidator = (/\b(2[0-3]|[01]\d):[0-5]\d\b/).exec(str);
+  return timeValidator ? timeValidator[0] : '';
 }
-
 module.exports = getTime;
