@@ -19,6 +19,7 @@
  */
 function getTime(str) {
   // write code here
+  let timeResult = str.match(/((\b[01]{1}\d{1})|(2{1}[0-3]{1})):[0-5]\d{1}\b/);
+  return timeResult ? timeResult[0] : '';
 }
-
 module.exports = getTime;
