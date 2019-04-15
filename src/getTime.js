@@ -18,7 +18,18 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  if (str.match(/\b\d\d:\d\d\b/) === null) {
+    return '';
+  } else {
+    let timeArr = str.match(/\b\d\d:\d\d\b/)[0].split('');
+    let hours = Number(timeArr[0] + timeArr[1]);
+    let minuts = Number(timeArr[3] + timeArr[4]);
+    if (hours > 23 || minuts > 59) {
+      return '';
+    } else {
+      return timeArr.join('');
+    }
+  }
 }
 
 module.exports = getTime;
