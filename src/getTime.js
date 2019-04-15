@@ -18,11 +18,20 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const value = str.match(/\b([0-2])([0-9])(:)([0-5])([0-9])\b/);
-  if (!value || (value[1] > 1 && value[2] > 3)) {
+  const value = str.match(/\b[0-2][0-9]:[0-5][0-9]\b/g);
+  if (!value) {
     return '';
   }
-  return value[0];
+  const filteredTime = value.find(time => {
+    time.split('');
+    if (!(time[0] > 1 && time[1] > 3)) {
+      return true;
+    }
+  });
+  if (!filteredTime) {
+    return '';
+  }
+  return filteredTime;
 }
 
 module.exports = getTime;
