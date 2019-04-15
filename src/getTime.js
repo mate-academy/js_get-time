@@ -19,6 +19,7 @@
  */
 function getTime(str) {
   // write code here
+  let match = /\b[0-1][0-9]:[0-5][0-9]\b|\b2[0-3]:[0-5][0-9]\b/g.exec(str);
+  return match ? match[0] : '';
 }
-
 module.exports = getTime;
