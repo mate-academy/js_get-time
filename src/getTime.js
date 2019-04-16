@@ -18,11 +18,11 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  if (str.match(/\b(2[0-3]|[01]\d):[0-5]\d\b/) === null) {
+  const time = str.match(/\b(2[0-3]|[01]\d):[0-5]\d\b/);
+  if (time === null) {
     return '';
   } else {
-    const time = str.match(/\b(2[0-3]|[01]\d):[0-5]\d\b/)[0];
-    return time;
+    return time[0];
   }
 }
 
