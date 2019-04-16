@@ -21,7 +21,8 @@ function getTime(str) {
   if (str.match(/\b(2[0-3]|[01]\d):[0-5]\d\b/) === null) {
     return '';
   } else {
-    return str.match(/\b(2[0-3]|[01]\d):[0-5]\d\b/)[0];
+    const time = str.match(/\b(2[0-3]|[01]\d):[0-5]\d\b/)[0];
+    return time;
   }
 }
 
