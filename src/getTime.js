@@ -18,12 +18,8 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  let result = str.match(/((\b[01]{1}\d{1})|(2{1}[0-3]{1})):[0-5]\d{1}\b/);
-  if (result) {
-    return result[0];
-  } else {
-    return '';
-  }
+  let timeMatches = str.match(/((\b[01]{1}\d{1})|(2{1}[0-3]{1})):[0-5]\d{1}\b/);
+  return timeMatches ? timeMatches[0] : '';
 }
 
 module.exports = getTime;
