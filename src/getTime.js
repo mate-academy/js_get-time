@@ -18,9 +18,9 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  let check = /\b([0-1]\d|2[0-3]):[0-5]\d\b/;
-  let time = str.match(check);
-  return check.test(str) ? time[0] : '';
+  let timeExpression = /\b([0-1]\d|2[0-3]):[0-5]\d\b/;
+  let times = str.match(timeExpression);
+  return times ? times[0] : '';
 }
 
 module.exports = getTime;
