@@ -19,7 +19,7 @@
  */
 function getTime(str) {
   let timeFromString = /\b(2[0-3]|[01]\d):[0-5]\d\b/.exec(str);
-  return (timeFromString) ? timeFromString[0] : '';
+  return timeFromString ? timeFromString[0] : '';
 }
 
 module.exports = getTime;
