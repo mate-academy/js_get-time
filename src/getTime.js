@@ -20,11 +20,7 @@
 function getTime(str) {
   let regExp = /\b(([0-2][0-3])|([0-1][0-9])):[0-5]\d\b/;
   let match = regExp.exec(str);
-  if (match) {
-    return match[0];
-  } else {
-    return '';
-  }
+  return (match ? match[0] : '');
 }
 
 module.exports = getTime;
