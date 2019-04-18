@@ -19,9 +19,9 @@
  */
 function getTime(str) {
   // write code here
-  const timeRE = /\b(2[0-3]|[01]\d):[0-5]\d\b/;
-  let time = timeRE.exec(str);
-  return (time) ? time[0] : '';
+  const timeRegExp = /\b(2[0-3]|[01]\d):[0-5]\d\b/;
+  let times = timeRegExp.exec(str);
+  return times ? times[0] : '';
 }
 
 module.exports = getTime;
