@@ -19,8 +19,7 @@
  */
 function getTime(str) {
   const regExp = /\b2[0-3]{1}:[0-5]{1}\d\b|\b[01]{1}\d:[0-5]{1}\d\b/;
-  const time = regExp.exec(str);
-  return (time !== null) ? time[0] : '';
+  return (regExp.exec(str) !== null) ? regExp.exec(str)[0] : '';
 }
 
 module.exports = getTime;
