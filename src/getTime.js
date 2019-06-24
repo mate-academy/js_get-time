@@ -21,12 +21,8 @@ function getTime(str) {
   // write code here
   const timeSplit = str.replace(/[^-0-9:]/gim, ':').split(':');
   for (let i = 0; i < timeSplit.length - 1; i++) {
-    timeSplit[i] = timeSplit[i].trim();
-    if (
-      timeSplit[i] < 24
-      && timeSplit[i + 1] < 60
-      && timeSplit[i].length === 2
-      && timeSplit[i + 1].length === 2) {
+    if (/^([0-1]?[0-9]|2[0-3]):([0-5][0-9])(:[0-5][0-9])?$/
+      .test(timeSplit[i] + ':' + timeSplit[i + 1])) {
       return (timeSplit[i] + ':' + timeSplit[i + 1]);
     }
   }
