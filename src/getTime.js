@@ -18,7 +18,11 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const matched = str.match(/\b([0-1][0-9]|2[0-3]):[0-5][0-9]\b/g);
+  if (matched == null) {
+    return '';
+  }
+  return matched[0];
 }
 
 module.exports = getTime;
