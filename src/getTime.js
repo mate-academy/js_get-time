@@ -18,7 +18,19 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const firstTime = str.match(/\d+:\d+/g)
+    .filter(item => item.length === 5)
+    .find((item) => {
+      const itemParts = item.split(':');
+      if (+itemParts[0] >= 0
+      && +itemParts[0] <= 23
+      && +itemParts[1] >= 0
+      && +itemParts[1] <= 59) {
+        return item;
+      }
+    });
+
+  return firstTime || '';
 }
 
 module.exports = getTime;
