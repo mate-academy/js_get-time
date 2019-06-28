@@ -18,7 +18,7 @@
  * @returns {string} - valid time
  */
 const getTime = string => {
-  const pattern = /\b(([0-1][0-9])|(2[0-3])):([0-5][0-9]\b)/;
+  const pattern = /\b(([0-1][0-9])|(2[0-3])):([0-5][0-9])\b/;
   const matches = string.match(pattern);
 
   return matches ? matches[0] : '';
