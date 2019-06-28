@@ -18,25 +18,10 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const matches = str.match(/\b\d{2}:\d{2}\b/g);
+  const searchRegExp = /\b[0-1][0-9]:[0-5][0-9]\b|\b[2][0-3]:[0-5][0-9]\b/;
+  const validTime = searchRegExp.exec(str);
 
-  if (matches === null) {
-    return '';
-  }
-
-  for (let i = 0; i < matches.length; i++) {
-    const hour = matches[i].split(':').map(Number)[0];
-    const minutes = matches[i].split(':').map(Number)[1];
-
-    if (hour >= 0
-      && hour < 24
-      && minutes >= 0
-      && minutes < 60) {
-      return matches[i];
-    }
-  }
-
-  return '';
+  return validTime ? validTime[0] : '';
 }
 
 module.exports = getTime;
