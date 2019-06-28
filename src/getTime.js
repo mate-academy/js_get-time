@@ -18,10 +18,10 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const normalTime = /\b[0-1][0-9]:[0-5][0-9]\b|\b2[0-3]:[0-5][0-9]\b/;
-  const result = str.match(normalTime);
+  const normalTime = str
+    .match(/\b[0-1][0-9]:[0-5][0-9]\b|\b2[0-3]:[0-5][0-9]\b/);
 
-  return result !== null ? result[0] : '';
+  return normalTime !== null ? normalTime[0] : '';
 }
 
 module.exports = getTime;
