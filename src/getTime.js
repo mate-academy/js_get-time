@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 'use strict';
 
 /**
@@ -18,7 +19,11 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const matcher = str.match(/\b[0-1][0-9]:[0-5][0-9]\b|\b[2][0-3]:[0-5][0-9]\b/);
+  if (matcher) {
+    return matcher.join('').replace(/\s/g, '');
+  }
+  return '';
 }
 
 module.exports = getTime;
