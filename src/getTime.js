@@ -18,19 +18,10 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  let validTime = '';
-  const regExp = /\b[0-9][0-9].[0-9][0-9]\b/g;
-  let newStr = str.match(regExp);
+  const pattern = /\b(?:(?:[01][0-9])|(?:2[0-3])).[0-5][0-9]\b/;
+  const validTime = str.match(pattern);
 
-  if (newStr) {
-    newStr = newStr[0].split(':');
-    if (Number(newStr[0]) < 24
-      && Number(newStr[1]) < 60) {
-      validTime = newStr.join(':');
-    }
-  }
-
-  return validTime;
+  return validTime ? validTime.join('') : '';
 }
 
 module.exports = getTime;
