@@ -18,22 +18,13 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const time = str.split(/\D/);
-  let hour = 0;
-  let min = 0;
+  const time = str.match(/(^|\D)(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9](\D|$))/);
 
-  for (let i = 0; i < time.length; i++) {
-    if (time[i] <= 23 && time[i].length === 2) {
-      hour = time[i];
-
-      if (time[i + 1] < 60 && time[i + 1].length === 2) {
-        min = time[i + 1];
-
-        return `${hour}:${min}`;
-      }
-    }
-  }
-  return '';
+  if (time !== null) {
+    return time[0].replace(/\s/, '').replace(/,/, '');
+  } else {
+    return '';
+  };
 }
 
 module.exports = getTime;
