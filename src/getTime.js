@@ -18,7 +18,18 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const pattern = /\d+:\d+/g;
+  const times = str.match(pattern);
+
+  const findTime = times.find((time) => {
+    const partTime = time.split(':');
+    return (Number(partTime[0]) < 24
+      && partTime[0].length <= 2
+      && partTime[1].length <= 2
+      && Number(partTime[1] < 60));
+  });
+
+  return findTime || '';
 }
 
 module.exports = getTime;
