@@ -18,7 +18,22 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const time = str.split(/\D/);
+  let hour = 0;
+  let min = 0;
+
+  for (let i = 0; i < time.length; i++) {
+    if (time[i] <= 23 && time[i].length === 2) {
+      hour = time[i];
+
+      if (time[i + 1] < 60 && time[i + 1].length === 2) {
+        min = time[i + 1];
+
+        return `${hour}:${min}`;
+      }
+    }
+  }
+  return '';
 }
 
 module.exports = getTime;
