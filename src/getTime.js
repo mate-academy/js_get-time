@@ -19,13 +19,8 @@
  */
 
 function getTime(str) {
-  const timeStr = '';
-  const time = str.match(/\b(2[0-3]|[01]?[0-9]):([0-5]?[0-9])\b/);
-  if (time === null) {
-    return timeStr;
-  };
-
-  return time[0];
+  const matches = str.match(/\b(2[0-3]|[01]?[0-9]):([0-5]?[0-9])\b/);
+  return (matches === null ? '' : matches[0]);
 }
 
 module.exports = getTime;
