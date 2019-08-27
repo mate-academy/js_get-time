@@ -20,11 +20,7 @@
 function getTime(str) {
   const time = str.match(/\b([0-1]\d|2[0-3]):[0-5]\d\b/);
 
-  if (time !== null) {
-    return time[0];
-  }
-
-  return '';
+  return time !== null ? time[0] : '';
 }
 
 module.exports = getTime;
