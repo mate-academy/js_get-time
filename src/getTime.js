@@ -19,6 +19,7 @@
  */
 function getTime(str) {
   const match = /(\b0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]\b/.exec(str);
+
   return match !== null ? match[0] : '';
 }
 
