@@ -18,9 +18,9 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const timeStr = str.match(/(?<!\d)([01]\d|2[0-3]):[0-5]\d(?!\d)/);
+  const timeArray = str.match(/(?<!\d)([01]\d|2[0-3]):[0-5]\d(?!\d)/);
 
-  return timeStr === null ? '' : timeStr.join('').slice(0, 5);
+  return timeArray === null ? '' : timeArray.join('').slice(0, 5);
 }
 
 module.exports = getTime;
