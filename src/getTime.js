@@ -18,7 +18,17 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const rightTime = str
+    .replace(/[^\d{1,2}:\d{2}]/g, '')
+    .split(',')
+    .find(time => {
+      if (+time.split(':')[0] < 24
+      && +time.split(':')[1] < 60 && time.length < 6) {
+        return time;
+      }
+    });
+
+  return rightTime !== undefined ? rightTime : '';
 }
 
 module.exports = getTime;
