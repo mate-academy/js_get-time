@@ -19,19 +19,9 @@
  */
 function getTime(str) {
   const timeInStr = str
-    .replace(/[^0-9:\s]/g, '').split(' ').filter(elem => /[^\s]/.test(elem));
+    .match(/\b((([0-1][0-9])|(2[0-3])):([0-5][0-9]))\b/);
 
-  for (let i = 0; i < timeInStr.length; i++) {
-    timeInStr[i] = timeInStr[i].split(':');
-
-    if (timeInStr[i][0].length === 2 && timeInStr[i][1].length === 2) {
-      if (Number(timeInStr[i][0]) < 24 && Number(timeInStr[i][1]) < 60) {
-        return timeInStr[i].join(':');
-      }
-    }
-  }
-
-  return '';
+  return timeInStr === null ? '' : timeInStr[0];
 }
 
 module.exports = getTime;
