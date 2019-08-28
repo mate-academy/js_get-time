@@ -19,6 +19,13 @@
  */
 function getTime(str) {
   // write code here
+  const validTime = str.match(/\b(2[0-3]|[01]?[0-9]):([0-5]?[0-9])\b/);
+
+  if (validTime === null) {
+    return '';
+  } else {
+    return validTime[0];
+  }
 }
 
 module.exports = getTime;
