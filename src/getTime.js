@@ -19,7 +19,7 @@
  */
 function getTime(str) {
   const pattern = /\b([01][\d]|2[0-3]):([0-5]\d)\b/g;
-  const validTime = str.match(pattern);
+  const matches = str.match(pattern);
 
   return validTime ? validTime[0] : '';
 }
