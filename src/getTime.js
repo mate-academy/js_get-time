@@ -19,7 +19,7 @@
  */
 function getTime(str) {
   const validTime = str.match(/\b([0-1]\d|2[0-3]):[0-5]\d\b/);
-  const firstValidTime = validTime === null ? '' : validTime.join().slice(0, 5);
+  return validTime ?  validTime[0] : '';
   return firstValidTime;
 }
 
