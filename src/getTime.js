@@ -18,16 +18,18 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
   let timeForm = str.match(/\b\d{2}:\d{2}\b/);
+
   if (timeForm === null) {
     return '';
   }
+
   timeForm = timeForm.join().split(':');
 
   if (+timeForm[0] < 24 && +timeForm[1] < 60) {
     return timeForm.join(':');
   }
+
   return '';
 }
 
