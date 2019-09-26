@@ -23,7 +23,7 @@ function getTime(str) {
     return '';
   }
 
-  return matchedStr[0].toString();
+  return matchedStr[0];
 }
 
 module.exports = getTime;
