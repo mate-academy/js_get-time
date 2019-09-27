@@ -19,6 +19,20 @@
  */
 function getTime(str) {
   // write code here
+  const time = str.match(/\b\d\d:\d\d\b/g);
+  if (time === null) {
+    return '';
+  }
+  let timeCorrect = '';
+  for (let i = 0; i < time.length; i++) {
+    const hour = +(time[i][0] + time[i][1]);
+    const minutes = +(time[i][3] + time[i][4]);
+    if (hour < 24 && minutes < 60) {
+      timeCorrect += time[i];
+      break;
+    }
+  }
+  return timeCorrect;
 }
 
 module.exports = getTime;
