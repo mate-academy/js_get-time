@@ -19,23 +19,8 @@
  */
 
 function getTime(str) {
-  const numbers = str.replace(/[a-zA-Z]/g, '').trim();
-  const outputFormatLength = 5;
-  const resultForValidate = numbers
-    .split(' ')
-    .map(item => item.replace(/,/g, ''))
-    .filter(item => item.length === outputFormatLength)
-    .join('')
-    .substr(0, outputFormatLength);
-  if (resultForValidate.startsWith('24')) {
-    return '';
-  }
-
-  if (+resultForValidate.substr(3, 5) > 59) {
-    return '';
-  }
-
-  return resultForValidate;
+  const checkTime = str.match(/\b(2[0-3]|[01]?[0-9]):(5[0-9]|[01]?[0-9])\b/g);
+  return checkTime === null ? '' : checkTime[0];
 }
 
 module.exports = getTime;
