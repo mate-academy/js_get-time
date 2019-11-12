@@ -18,7 +18,23 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const numbers = str.replace(/[a-zA-Z]/g, '').trim();
+  const outputFormatLength = 5;
+  const resultForValidate = numbers
+    .split(' ')
+    .map(item => item.replace(/,/g, ''))
+    .filter(item => item.length === outputFormatLength)
+    .join('')
+    .substr(0, outputFormatLength);
+  if (resultForValidate.startsWith('24')) {
+    return '';
+  }
+
+  if (+resultForValidate.substr(3, 5) > 59) {
+    return '';
+  }
+
+  return resultForValidate;
 }
 
 module.exports = getTime;
