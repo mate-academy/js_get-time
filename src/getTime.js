@@ -17,6 +17,7 @@
  *
  * @returns {string} - valid time
  */
+
 function getTime(str) {
   const numbers = str.replace(/[a-zA-Z]/g, '').trim();
   const outputFormatLength = 5;
