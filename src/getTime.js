@@ -19,7 +19,8 @@
  */
 
 function getTime(str) {
-  const checkTime = str.match(/\b(2[0-3]|[01]?[0-9]):(5[0-9]|[01]?[0-9])\b/g);
+  const checkTime = str.replace(/\d{3,}/g, '')
+    .match(/([01]\d|2[0-3]):[0-5]\d/g);
   return checkTime === null ? '' : checkTime[0];
 }
 
