@@ -19,11 +19,11 @@
  */
 function getTime(str) {
   const timeAtString = str
-    .match(/\b[0-1][0-9]:[0-5][0-9]\b|\b[2][0-3]:[0-5][0-9]\b/m);
+    .match(/\b(2[0-3]|[0-1][0-9]):[0-5][0-9]\b/m);
   if (timeAtString === null) {
     return '';
   }
-  return timeAtString.join('');
+  return timeAtString[0];
 }
 
 module.exports = getTime;
