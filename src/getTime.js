@@ -15,10 +15,12 @@
  *
  * @param {string} str
  *
- * @returns {string} - valid time
+ * @returns {boolean} - valid time
  */
 function getTime(str) {
-  // write code here
+  const dateTime = str.match(/\b([0-1]\d|[2][0-3]):[0-5]\d\b/);
+
+  return dateTime ? dateTime[0] : '';
 }
 
 module.exports = getTime;
