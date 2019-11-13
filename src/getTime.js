@@ -18,7 +18,7 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const reg = new RegExp(/\b(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]\b/);
+  const reg = new RegExp(/\b([0-1]\d|2[0-3]):[0-5][0-9]\b/);
 
   if (reg.test(str)) {
     const result = str.match(reg);
