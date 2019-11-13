@@ -18,9 +18,9 @@
  * @returns {boolean} - valid time
  */
 function getTime(str) {
-  const dateTime = str.match(/\b([0-1]\d|[2][0-3]):[0-5]\d\b/);
+  const validTime = str.match(/\b([0-1]\d|[2][0-3]):[0-5]\d\b/);
 
-  return dateTime ? dateTime[0] : '';
+  return validTime ? validTime[0] : '';
 }
 
 module.exports = getTime;
