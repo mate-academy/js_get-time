@@ -18,7 +18,7 @@
  * @returns {string} - valid time
  */
 function getTime(str = '') {
-  const time = str.match(/(\b([0-1][\d])|(2[0-3])):[0-5]\d\b/g);
+  const time = str.match(/(\b([0-1]\d)|(2[0-3])):[0-5]\d\b/g);
   return (time !== null) ? time[0] : '';
 }
 
