@@ -18,12 +18,12 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const validTimeRegEx = /\b(0\d|1\d|2[0-3]):[0-5][0-9]\b/g;
+  const pattern = /\b(0\d|1\d|2[0-3]):[0-5][0-9]\b/g;
 
-  if (validTimeRegEx.test(str)) {
-    const validTimeList = str.match(validTimeRegEx);
+  if (pattern.test(str)) {
+    const matches = str.match(pattern);
 
-    return validTimeList[0];
+    return matches[0];
   }
 
   return '';
