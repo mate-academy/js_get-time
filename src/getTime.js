@@ -20,13 +20,9 @@
 function getTime(str) {
   const pattern = /\b(([0-1][0-9])|([2][0-3])):([0-5][0-9])\b/g;
 
-  const result = str.match(pattern);
+  const matches = str.match(pattern);
 
-  if (result) {
-    return result[0];
-  } else {
-    return '';
-  }
+  return (matches) ? matches[0] : '';
 }
 
 module.exports = getTime;
