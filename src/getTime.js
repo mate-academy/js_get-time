@@ -19,6 +19,19 @@
  */
 function getTime(str) {
   // write code here
+  const index = str.search(/\b([0-1][0-9]|2[0-3]):[0-5][0-9]\b/);
+
+  if (index === -1) {
+    return '';
+  }
+
+  let time = '';
+
+  for (let i = index; i < index + 5; i += 1) {
+    time += str[i];
+  }
+
+  return time;
 }
 
 module.exports = getTime;
