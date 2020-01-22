@@ -42,6 +42,4 @@ function getTime(str) {
   }
 }
 
-getTime('Breakfast at 09:59, Dinner at 21:00');
-
 module.exports = getTime;
