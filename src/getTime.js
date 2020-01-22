@@ -18,7 +18,30 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const patternStr = /(\d+):(\d+)/g;
+  const patternDigits = /\d+/g;
+
+  const time = str.match(patternStr);
+  const result = [];
+
+  for (let i = 0; i < time.length; i++) {
+    const minutesOrHours = time[i].match(patternDigits);
+
+    if (+minutesOrHours[0] < 24
+      && minutesOrHours[0].length === 2
+      && +minutesOrHours[1] < 60
+      && minutesOrHours[1].length === 2) {
+      result.push(time[i]);
+    }
+  }
+
+  if (result.length === 0) {
+    return '';
+  } else {
+    return result[0];
+  }
 }
+
+getTime('Breakfast at 09:59, Dinner at 21:00');
 
 module.exports = getTime;
