@@ -17,17 +17,12 @@
  *
  * @returns {string} - valid time
  */
+
 function getTime(str) {
-  const pattern = /(\b\d{2}(=?:))(\d{2}\b)/g;
-  const result = str.match(pattern);
-  const maxMinute = 60;
-  const maxHour = 23;
+  const pattern = /(\b[0-1].{1}|[2][0-3]):([[0-5].\b|60])/i;
+  const result = str.match(pattern); // ["09:00", "09", "00"]
 
-  if (result == null) {
-    return '';
-  }
-
-  if (+result[0].slice(0, 2) > maxHour || (+result[0].slice(3) >= maxMinute)) {
+  if (result === null) {
     return '';
   }
 
