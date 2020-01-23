@@ -18,7 +18,20 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const pattern = /(\b\d{2}(=?:))(\d{2}\b)/g;
+  const result = str.match(pattern);
+
+  if (result == null) {
+    return '';
+  }
+
+  if (+result[0].slice(0, 2) > 23) {
+    return '';
+  } else if ((+result[0].slice(3) >= 60)) {
+    return '';
+  }
+
+  return result[0];
 }
 
 module.exports = getTime;
