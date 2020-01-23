@@ -18,7 +18,23 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  let pattern;
+
+  if (str.length === 5) {
+    pattern = /([01]\d|2[0-3]):[0-5]\d/g;
+  } else {
+    pattern = /\s([01]\d|2[0-3]):[0-5]\d/g;
+  }
+
+  const arrCorrectAnswers = str.match(pattern);
+
+  if (!arrCorrectAnswers) {
+    return '';
+  }
+
+  const trueTime = arrCorrectAnswers[0].replace(/\s/, '');
+
+  return trueTime;
 }
 
 module.exports = getTime;
