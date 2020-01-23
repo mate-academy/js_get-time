@@ -28,7 +28,7 @@ test('09:60', () => {
 });
 
 test('24:05', () => {
-  expect(getTime('24:05'))
+  expect(getTime('000:12'))
     .toBe('');
 });
 
