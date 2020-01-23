@@ -2,7 +2,6 @@
 
 /**
  * Implement getTime function:
- * fs_on_dec19_salogubova
  * Function takes string and returns first valid time in this string. Valid time
  * has format 'hh:mm'. Both hours and minutes have 2 digits, e.g. '09:00'. Hours
  * is at most 23 and minutes is at most 59. '37:98' is not valid time. If
