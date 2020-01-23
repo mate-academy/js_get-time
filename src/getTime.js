@@ -20,14 +20,14 @@
 function getTime(str) {
   const pattern = /(\b\d{2}(=?:))(\d{2}\b)/g;
   const result = str.match(pattern);
+  const maxMinute = 60;
+  const maxHour = 23;
 
   if (result == null) {
     return '';
   }
 
-  if (+result[0].slice(0, 2) > 23) {
-    return '';
-  } else if ((+result[0].slice(3) >= 60)) {
+  if (+result[0].slice(0, 2) > maxHour || (+result[0].slice(3) >= maxMinute)) {
     return '';
   }
 
