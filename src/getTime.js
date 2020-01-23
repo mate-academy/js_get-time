@@ -20,7 +20,7 @@
 function getTime(str) {
   const pattern = /\b([0-1][0-9]|[2][0-3]):[0-5][0-9]\b/;
 
-  return (pattern.test(str)) ? str.match(pattern)[0] || false : '';
+  return str.match(pattern) ? str.match(pattern)[0] : '';
 }
 
 module.exports = getTime;
