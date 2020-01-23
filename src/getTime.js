@@ -19,9 +19,9 @@
  */
 function getTime(str) {
   const pattern = /\b([01]\d|2[0-3]):[0-5]\d\b/g;
-  const arrCorrectAnswers = str.match(pattern);
+  const matches = str.match(pattern);
 
-  return (!arrCorrectAnswers) ? '' : arrCorrectAnswers[0];
+  return matches ? matches[0] : '';
 }
 
 module.exports = getTime;
