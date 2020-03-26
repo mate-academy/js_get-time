@@ -18,7 +18,26 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const words = str.split(' ');
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i][words[i].length - 1] === ',') {
+      words[i] = words[i].slice(0, words[i].length - 1);
+    }
+
+    if (words[i].includes(':') && words[i].length === 5) {
+      const timeParts = words[i].split(':');
+
+      if (parseInt(timeParts[0]) <= 23
+      && parseInt(timeParts[0]) >= 0
+      && parseInt(timeParts[1]) <= 59
+      && parseInt(timeParts[1]) >= 0) {
+        return words[i];
+      }
+    }
+  }
+
+  return '';
 }
 
 module.exports = getTime;
