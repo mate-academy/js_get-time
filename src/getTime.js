@@ -18,14 +18,12 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-
   const timeSplit = str.match(/\d{2,3}:\d{2,3}/g);
   const timeValidation = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
 
   if (timeSplit.length > 1) {
     for (let i = 0; i < timeSplit.length; i++) {
       if (timeValidation.test(timeSplit[i])) {
-
       } else {
         timeSplit.splice(i, 1);
       }
