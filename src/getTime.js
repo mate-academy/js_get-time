@@ -18,29 +18,25 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  let strWithoutSumb = str.match(/[^,]/g).join('').split(' ');
-  let strLength5 = '';
+  let strWithoutSumbols = str.match(/[^,]/g).join('').split(' ');
+  let checkedTimeLength = '';
 
-  for (let i = 0; i < strWithoutSumb.length; i++) {
-    if (strWithoutSumb[i].length === 5) {
-      strLength5 = strLength5 + strWithoutSumb[i];
+  for (let i = 0; i < strWithoutSumbols.length; i++) {
+    if (strWithoutSumbols[i].length === 5) {
+      checkedTimeLength += strWithoutSumbols[i];
     }
   }
 
   let time = '';
-  if (strLength5.length === 0) {
+  if (checkedTimeLength.length === 0) {
     time = '';
   } else {
-    let s = (strLength5.match(/[0-1][0-9]:[0-5][0-9]|[2][0-3]:[0-5][0-9]/))
+    let s = (checkedTimeLength.match(/[0-1][0-9]:[0-5][0-9]|[2][0-3]:[0-5][0-9]/))
     if (s === null) {
       time = '';
     } else {
       time = s[0];
     }
-  }
-
-  if (time === '24:00') {
-    time = '';
   }
 
   return time;
