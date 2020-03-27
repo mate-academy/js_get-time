@@ -22,9 +22,9 @@ function getTime(str) {
   const time2 = /\b[2][0-3]:[0-5]\d\b/;
   let time = '';
 
-  if (str.match(time1) !== null) {
+  if (str.match(time1)) {
     time = str.match(time1)[0];
-  } else if (str.match(time2) !== null) {
+  } else if (str.match(time2)) {
     time = str.match(time2)[0];
   }
 
