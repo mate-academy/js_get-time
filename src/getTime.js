@@ -18,7 +18,25 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const charMask = /(\d{0,}):\t?(\d{0,})[0-9]/g;
+  const getTimes = str.match(charMask);
+  let getNumbers = '';
+
+  for (let pos = 0; pos < getTimes.length; pos++) {
+    getNumbers = getTimes[pos].split(':');
+
+    if (getNumbers[0].length > 2
+      || getNumbers[1].length > 2) {
+      getNumbers = '';
+    }
+
+    if (getNumbers[0] >= 0 && getNumbers[0] <= 23
+      && getNumbers[1] >= 0 && getNumbers[1] <= 59) {
+      return getNumbers[0] + ':' + getNumbers[1];
+    }
+  }
+
+  return '';
 }
 
 module.exports = getTime;
