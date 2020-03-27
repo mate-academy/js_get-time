@@ -32,23 +32,6 @@ function getTime(str) {
   }
 
   return '';
-  // const result = str.match(/\b[0-9][0-9]:[0-9][0-9]\b/).join();
-
-  // return result;
-  // const strNum = str.match(/[0-9]/gi).join('');
-  // const firstTwo = strNum.slice(0, 2);
-  // const lastTwo = strNum.slice(2, 4);
-  // const result = firstTwo + ':' + lastTwo;
-
-  // if ((firstTwo >= '24') || lastTwo > '59') {
-  //   return '';
-  // }
-
-  // if (strNum.slice(0, 3) === '000:12') {
-  //   return '01:12';
-  // }
-
-  // return result;
 }
 
 module.exports = getTime;
