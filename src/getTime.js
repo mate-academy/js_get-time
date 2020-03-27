@@ -15,10 +15,14 @@
  *
  * @param {string} str
  *
- * @returns {string} - valid time
+ * @returns {RegExpMatchArray} - valid time
  */
 function getTime(str) {
-  // write code here
+  if (str.match(/\b([0-1][0-9]|2[0-3]):[0-5][0-9]\b/gi) === null) {
+    return '';
+  } else {
+    return str.match(/\b([0-1][0-9]|2[0-3]):[0-5][0-9]\b/gi)[0];
+  }
 }
 
 module.exports = getTime;
