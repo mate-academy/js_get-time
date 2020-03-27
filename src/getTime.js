@@ -18,28 +18,22 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  let strWithoutSumbols = str.match(/[^,]/g).join('').split(' ');
-  let checkedTimeLength = '';
+  let res;
 
-  for (let i = 0; i < strWithoutSumbols.length; i++) {
-    if (strWithoutSumbols[i].length === 5) {
-      checkedTimeLength += strWithoutSumbols[i];
-    }
-  }
+  if (str.length > 0) {
+    let normalizeStr = ' ' + str + ' ';
+    let time = normalizeStr.match(/[,\s](2[0-3]|1\d|0\d|00):([0-5]\d)[,\s]/);
 
-  let time = '';
-  if (checkedTimeLength.length === 0) {
-    time = '';
-  } else {
-    let s = (checkedTimeLength.match(/[0-1][0-9]:[0-5][0-9]|[2][0-3]:[0-5][0-9]/))
-    if (s === null) {
-      time = '';
+    if (time === null) {
+      res = '';
     } else {
-      time = s[0];
+      res = time[0].slice(1, 6);
     }
+  } else {
+    res = '';
   }
 
-  return time;
+  return res;
 }
 
 module.exports = getTime;
