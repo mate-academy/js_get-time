@@ -22,9 +22,9 @@ function getTime(str) {
 
   if (!time) {
     return '';
-  } else {
-    return time[0];
   }
+
+  return time[0];
 }
 
 module.exports = getTime;
