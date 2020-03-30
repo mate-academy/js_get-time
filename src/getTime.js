@@ -18,17 +18,8 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const timeString = str.match(/\d{2,}:\d{2,}/g);
+  const resultTimeArr = str.match(/\b([01]\d|2[0-3]):[0-5]\d\b/);
 
-  for (const time of timeString) {
-    const nums = time.split(':');
-
-    if ((nums[0].length === 2 && nums[0] <= 23)
-    && (nums[1].length === 2 && nums[1] <= 59)) {
-      return nums.join(':');
-    }
-  }
-
-  return '';
+  return resultTimeArr ? resultTimeArr[0] : '';
 }
 module.exports = getTime;
