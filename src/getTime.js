@@ -24,6 +24,4 @@ function getTime(str) {
   return str !== null ? str[0] : '';
 }
 
-
-
 module.exports = getTime;
