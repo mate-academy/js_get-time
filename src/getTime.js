@@ -18,7 +18,21 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  if (str.length > 0) {
+    let normalizeStr = ' ' + str + ' ';
+    let time = normalizeStr.match(/[,\s](2[0-3]|1\d|0\d|00):([0-5]\d)[,\s]/);
+
+    if (time === null) {
+      return '';
+    }
+
+    return time[0].slice(1, 6);
+  }
+
+  return '';
 }
+
+
+
 
 module.exports = getTime;
