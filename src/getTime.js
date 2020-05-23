@@ -19,6 +19,14 @@
  */
 function getTime(str) {
   // write code here
+  const regExpr = /(\b[0-1][0-9]):([0-5][0-9]\b)|(2[0-3]):([0-5][0-9])/g;
+  const strMatch = str.match(regExpr);
+
+  if (strMatch !== null) {
+    return strMatch.join(' ').slice(0, 5);
+  } else {
+    return '';
+  }
 }
 
 module.exports = getTime;
