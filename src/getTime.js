@@ -22,11 +22,7 @@ function getTime(str) {
 
   const validTime = str.match(pattern);
 
-  if (!validTime) {
-    return '';
-  }
-
-  return validTime[0];
+  return !validTime ? '' : validTime[0];
 }
 
 module.exports = getTime;
