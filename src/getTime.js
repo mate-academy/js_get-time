@@ -18,11 +18,15 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const hour = /\b(0(?=[0-9])\d|1(?=[0-9])\d|2(?=[0-3])\d)\:[0-5][0-9]\b/;
-  let validHour = str.match(hour);
-  if (validHour) {
-    return validHour[0];
-  } else return "";
+  // eslint-disable-next-line max-len
+  const getTimePattern = /\b(0(?=[0-9])\d|1(?=[0-9])\d|2(?=[0-3])\d)\:[0-5][0-9]\b/;
+  const coincidence = str.match(getTimePattern);
+
+  if (coincidence) {
+    return coincidence[0];
+  } else {
+    return '';
+  }
 }
 
 module.exports = getTime;
