@@ -18,14 +18,14 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const hhmm = str.match(/\b\d{2}:\d{2}\b/);
+  const matches = str.match(/\b\d{2}:\d{2}\b/);
 
-  if (!hhmm) {
+  if (!matches) {
     return '';
   }
 
-  const hh = hhmm[0].substr(0, 2);
-  const mm = hhmm[0].substr(3, 2);
+  const hh = matches[0].substr(0, 2);
+  const mm = matches[0].substr(3, 2);
   let time = '';
 
   if (+hh > 23) {
