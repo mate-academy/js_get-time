@@ -18,7 +18,7 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const matches = str.match(/\b\d{2}:\d{2}\b/);
+  const matches = str.match(/(\b[0-1]\d|\b[2][0-3]):[0-5]\d\b/);
 
   if (!matches) {
     return '';
@@ -26,17 +26,8 @@ function getTime(str) {
 
   const hh = matches[0].substr(0, 2);
   const mm = matches[0].substr(3, 2);
-  let time = '';
 
-  if (+hh > 23) {
-    time = '';
-  } else if (+mm > 59) {
-    time = '';
-  } else {
-    time = hh + ':' + mm;
-  }
-
-  return time;
+  return hh + ':' + mm;
 }
 
 module.exports = getTime;
