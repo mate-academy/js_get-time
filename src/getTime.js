@@ -18,9 +18,9 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  const timeSearcher = /\b(([0-1][0-9]|2[0-3]):[0-5][0-9])\b/;
-  const timeCatcher = str.match(timeSearcher) || [''];
-  const correctTime = `${timeCatcher[0]}`;
+  const timePattern = /\b(([0-1][0-9]|2[0-3]):[0-5][0-9])\b/;
+  const timeMatches = str.match(timePattern) || [''];
+  const correctTime = `${timeMatches[0]}`;
 
   return correctTime;
 }
