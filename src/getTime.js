@@ -22,11 +22,7 @@ function getTime(str) {
 
   const time = str.match(timeExpresion);
 
-  if (time != null) {
-    return time[0];
-  }
-
-  return '';
+  return time != null ? time[0] : '';
 }
 
 module.exports = getTime;
