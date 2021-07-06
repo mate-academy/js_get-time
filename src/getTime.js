@@ -19,6 +19,19 @@
  */
 function getTime(str) {
   // write code here
+  const regExr = /\b(\d\d):(\d\d)\b/;
+
+  if (!regExr.test(str)) {
+    return '';
+  }
+
+  const match = regExr.exec(str);
+
+  if (+match[1] >= 24 || +match[2] >= 60) {
+    return '';
+  }
+
+  return match[0];
 }
 
 module.exports = getTime;
