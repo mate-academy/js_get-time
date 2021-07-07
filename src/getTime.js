@@ -19,6 +19,13 @@
  */
 function getTime(str) {
   // write code here
+  let pattern = /\b[0-2][0-9].[0-5][0-9]\b/;
+  let index = str.search(pattern);
+  let time = "";
+  if (Number(str[index] + str[index + 1]) < 24 && Number(str[index + 3] + str[index + 4]) < 60) {
+    time = str[index] + str[index + 1] + ":" + str[index + 3] + str[index + 4];
+  }
+  return time;
 }
 
 module.exports = getTime;
