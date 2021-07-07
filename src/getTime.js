@@ -18,7 +18,20 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const strTime = str.match(/[0-9]{2,3}:[0-9]{2,3}/g);
+
+  for (const i of strTime) {
+    const hours = i.slice(0, 2);
+    const minutes = i.slice(3, 5);
+
+    if (i.length > 5) {
+      continue;
+    } else if (hours < 24 && minutes < 60) {
+      return i;
+    }
+  }
+
+  return '';
 }
 
 module.exports = getTime;
