@@ -1,4 +1,6 @@
-{
+{ "jest": {
+  "testEnvironment": "node"
+  },
   "name": "get-time",
   "version": "1.0.0",
   "description": "Get time from the string",
