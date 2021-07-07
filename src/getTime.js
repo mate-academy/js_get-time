@@ -18,7 +18,11 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  // eslint-disable-next-line max-len
+  const getTimePattern = /\b(0(?=[0-9])\d|1(?=[0-9])\d|2(?=[0-3])\d)\:[0-5][0-9]\b/;
+  const coincidence = str.match(getTimePattern);
+
+  return coincidence ? coincidence[0] : '';
 }
 
 module.exports = getTime;
