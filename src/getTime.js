@@ -2,7 +2,6 @@
 
 /**
  * Implement getTime function:
- *
  * Function takes string and returns first valid time in this string. Valid time
  * has format 'hh:mm'. Both hours and minutes have 2 digits, e.g. '09:00'. Hours
  * is at most 23 and minutes is at most 59. '37:98' is not valid time. If
@@ -18,7 +17,10 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const pattern = /\b([0-1][0-9]|2[0-3]):[0-5][0-9]\b/;
+  const matches = str.match(pattern);
+
+  return matches ? matches[0] : '';
 }
 
 module.exports = getTime;
