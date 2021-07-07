@@ -17,8 +17,20 @@
  *
  * @returns {string} - valid time
  */
+const isCorrectTime = (str) => {
+  const timeArr = str.split(':');
+  return (timeArr[0] < 24 && timeArr[0].length === 2)
+    && (timeArr[1] < 60 && timeArr[1].length === 2);
+};
+
 function getTime(str) {
-  // write code here
+  const timeArr = str.match(/[0-9]+:[0-9]+/g);
+  for (const time of timeArr) {
+    if (isCorrectTime(time)) {
+      return time;
+    }
+  }
+  return '';
 }
 
 module.exports = getTime;
