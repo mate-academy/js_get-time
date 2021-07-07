@@ -18,7 +18,14 @@
  * @returns {string} - valid time
  */
 function getTime(str) {
-  // write code here
+  const validTimeLimit = /\b[0-1][0-9]:[0-5][0-9]\b|\b[2][0-3]:[0-5][0-9]\b/;
+  const realTime = validTimeLimit.exec(str);
+
+  if (realTime) {
+    return realTime[0];
+  }
+
+  return '';
 }
 
 module.exports = getTime;
